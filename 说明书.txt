@@ -1,0 +1,131 @@
+sourceNavigation.json 资源库（进入软件显示内容）
+
+searchUrl.json 定制导航栏数据/搜索接口地址 对接苹果CMS10接口
+
+dialog.json 广告
+
+webPlugNavigation.json 云插件  https://mp.weixin.qq.com/s/9Xmvsfkiz8XC06aJX-bTDg
+第一步：定制云插件导航 ： 
+
+        
+图片
+切换到云插件资源站需要注意以下必要字段
+      "name": "奈飞影视",
+      "pic": "https://imdoubanio.com/view/activity_page/raw/public/p3190.jpg",
+      "type": "webPlug",
+      "click": true,
+      
+name字段为资源站名称
+pic字段为资源站图片
+type字段默认无需修改
+click字段是否使用此资源站 true 使用  false 不使用      
+      
+
+第二步：定制资源站类型：   
+    搜索结果为内置无需添加
+    
+图片
+"nav_url": "https://www.nfstar.net/vodtype/navCate-navPage.html",      
+"navHtml": {
+      "name": ["电影","欧美剧","国产剧","日韩剧","纪录片"],
+      "cate": ["20","21","22","23","26"],
+      "page": "1"
+      }
+name:
+  格式为数组，每一项显示名称如上图显示
+cate:
+  同上 每一项为资源站类型将替换为nav_url中navCate字段 
+  注意cate必须是网站真是存在，自己点击想定制的导航在链接中取值
+page:
+  为默认分页第一页从几开始将替换为navPage字段           
+nav_url:
+  打开奈飞影视网站选择一个类型并且翻页如下：
+  https://www.nfstar.net/vodtype/22-2/
+  https://www.nfstar.net/vodtype/navCate-navPage/
+         
+第三步：定制影视列表：   
+    
+图片
+效果上图需要获取字段
+ 影视名称，影视图片，影视描述，影视链接
+
+图片
+
+  "nav": {
+    "isKWInUrl": false,//无视
+    "isWebPlay": false,//无视
+    "descAttr": "",//无视
+    "descCss": "span.pic-text.text-right",//描述标签
+    "descIndex": 0,//第几个描述标签
+    "hasUrlPrefix": false,//url链接是否有前缀
+    "hasImgUrlPrefix": true,//图片地址是否有前缀
+    "imgAttr": "data-original",//去属性值（图片地址）
+    "imgCss": "a",//图片在哪个标签里面
+    "imgIndex": 0,//图片再第几个标签里
+    "isDescAttr": false,//描述是否取属性值
+    "isImgAttr": true,//取图片属性值
+    "isNameAttr": true,//去名称属性值
+    "isUrlAttr": true,//取详情地址属性值
+    "mainCss": "ul.myui-vodlist.clearfix",//影视列表
+    "mainListIndex": 0,//取第几个列表
+    "nameAttr": "title",//取名称属性值
+    "nameCss": "a",//名称标签
+    "nameIndex": 0,//取第几个
+    "searchListCss": "li",//影视列表个影视
+    "urlAttr": "href",//取影视详情url值
+    "urlCss": "a",//影视详情标签名
+    "urlIndex": 0//取第几个值
+  }
+以下这些字段务必了解清楚：
+划重点1：
+  "mainCss": "ul.myui-vodlist.clearfix",//影视列表       
+  "mainListIndex": 0,//取第几个列表
+划重点2：
+  "searchListCss": "li",//影视列表个影视  
+划重点3,
+  "nameAttr": "title",//取名称属性值
+  "nameCss": "a",//名称标签
+  "nameIndex": 0,//取第几个
+划重点4，
+  "hasUrlPrefix": false,//url链接是否有前缀
+  "urlAttr": "href",//取影视详情url值
+  "urlCss": "a",//影视详情标签名
+  "urlIndex": 0//取第几个值
+划重点5
+  "hasImgUrlPrefix": true,//图片地址是否有前缀
+  "imgAttr": "data-original",//去属性值（图片地址）
+  "imgCss": "a",//图片在哪个标签里面
+  "imgIndex": 0,//图片再第几个标签里  
+划重点6
+  "descCss": "span.pic-text.text-right",//描述标签
+  
+第四步：抓取播放详情链接
+    
+图片
+  "episodes": {
+    "hasUrlPrefix": false,//是否有前缀
+    "isListItemAttr": true,
+    "isReg": false,//无视
+    "isRegNeedDecoder": false//无视,
+    "listCss": "ul > li",//抓取列表
+    "isMultiList": false,//无视
+    "listCssMulti": "",//无视
+    "listItemAttr": "href",//抓取属性
+    "listItemCss": "a",//抓取标签
+    "listItemIndex": 0,//抓取哪个标签
+    "mainCss": "div.tab-pane.fade.in.clearfix",//缩短抓取区域
+    "mainIndex": 0,//第几个
+    "regIndexList": [//无视
+      0
+    ],
+    "regItemIndex": 0,//无视
+    "regItemStr": "",//无视
+    "regSplitList": [//无视
+      ""
+    ],
+    "regStrList": [//无视
+      ""
+    ]
+  }
+ 
+			
