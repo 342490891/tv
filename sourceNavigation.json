@@ -12,10 +12,10 @@
       "webPlus": {}
     },
     {
-      "name": "iHOT系列",
+      "name": "电影",
       "pic": "https://tva3.sinaimg.cn/large/a15b4afegy1fmvjkpglf3j21hc0u0h59.jpg",
-      "url": "https://gitee.com/freedTV/freed/raw/342490891/tv/ihot.m3u",
-      "type": "m3u",
+      "url": "https://raw.githubusercontent.com/342490891/tv/refs/heads/main/%E7%94%B5%E5%BD%B1%E8%BD%AE%E6%92%AD.txt",
+      "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
       "autoNext": false,
